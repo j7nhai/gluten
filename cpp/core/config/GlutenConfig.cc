@@ -16,6 +16,7 @@
  */
 
 #include <jni.h>
+#include <iostream>
 
 #include "compute/ProtobufUtils.h"
 #include "config.pb.h"
@@ -32,6 +33,7 @@ std::unordered_map<std::string, std::string> parseConfMap(JNIEnv* env, jbyteArra
     sparkConfs.emplace(pair.first, pair.second);
   }
 
+  std::cout << "load config~" << std::endl;
   return sparkConfs;
 }
 } // namespace gluten
