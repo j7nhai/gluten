@@ -94,10 +94,11 @@ class VeloxIteratorApi extends IteratorApi with Logging {
 
     splitInfos.zipWithIndex.map {
       case (splitInfos, index) =>
-        splitInfos.map(_.asInstanceOf[LocalFilesNode].toProtobuf).foreach { pb =>
-          // scalastyle:off
-          println(s"local file pb: ${pb.toString}")
-          // scalastyle:on
+        splitInfos.map(_.asInstanceOf[LocalFilesNode].toProtobuf).foreach {
+          pb =>
+            // scalastyle:off
+            println(s"local file pb: ${pb.toString}")
+            // scalastyle:on
         }
 
         GlutenPartition(
